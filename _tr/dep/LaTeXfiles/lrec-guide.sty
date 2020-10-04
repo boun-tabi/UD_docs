@@ -1,0 +1,38 @@
+% font packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage[kerning=true]{microtype}
+
+% paragraph sep
+\usepackage{parskip}
+\setlength{\parskip}{0.5mm}
+
+% linked crossrefs
+\newcommand{\itemautorefname}{Example}
+\usepackage{hyperref}
+\hypersetup{colorlinks = true, linkcolor = blue, citecolor = red, urlcolor = blue}
+
+\bibliographystyle{rusnat}
+\usepackage{geometry}
+\geometry{margin=1in, headheight=13pt}
+
+\usepackage{tikz-dependency}
+\tikzset{/depgraph/.cd,/depgraph/.search also = {/tikz},
+baseline=-0.6ex, inner sep=-0.1cm, edge horizontal padding=3pt, edge unit distance=1.8ex, theme=simple}
+
+% 
+\usepackage{leipzig}
+\makeglossaries
+\renewcommand{\glossarypreamble}{%
+Abbreviations used in this paper are as follows:{\ }}
+
+\usepackage{gb4e}
+\exewidth{(\thexnumi)}
+\let\eachwordone=\itshape
+\noautomath
+
+
+% references
+\usepackage{natbib}
+
