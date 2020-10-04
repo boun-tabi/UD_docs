@@ -11,14 +11,14 @@
 \end{center}
 
 \textbf{\texttt{nsubj}}:
-\texttt{nsubj} marks the overt nominal subjects. Subjects in matrix clauses and some embedded clauses bear nominative case in Turkish represented by a null suffix \citep{goksel2004turkish}. In \autoref{ex:nsubj}\footnote{\printglossaries}, the phrase \textit{Köşedeki dükkan} is the subject of the sentence. \textit{dükkan} is the head of this phrase. Therefore, it is tied to the predicate. As for \textit{köşedeki}, it is a modifier (amod) for \textit{dükkan}.
+\texttt{nsubj} marks the overt nominal subjects. Subjects in matrix clauses and some embedded clauses bear nominative case in Turkish represented by a null suffix \citep{goksel2005}. In \autoref{ex:nsubj}\footnote{\printglossaries}, the phrase \textit{Köşedeki dükkan} is the subject of the sentence. \textit{dükkan} is the head of this phrase. Therefore, it is tied to the predicate. As for \textit{köşedeki}, it is a modifier (amod) for \textit{dükkan}.
 
 \begin{exe}
 \ex \label{ex:nsubj}
 \begin{dependency}
 \begin{deptext}
 Köşe-de-ki \& dükkan \& yedi-de \& kapa-n-ıyor\\ 
-corner-\Loc{}-\Ptcp{} \& shop \& seven-\Loc{} \& close-\Refl{}-\Prog{}[\Tsg]\\
+corner-\Loc{}-\Ptcp{} \& shop[\Nom] \& seven-\Loc{} \& close-\Refl{}-\Prog{}[\Tsg]\\
 \end{deptext}
 \deproot{4}{root}
 \depedge{4}{3}{obl}
@@ -28,13 +28,14 @@ corner-\Loc{}-\Ptcp{} \& shop \& seven-\Loc{} \& close-\Refl{}-\Prog{}[\Tsg]\\
 \glt `The shop at the corner closes at seven.'
 \end{exe}
 
-Subjects in possessive embedded clauses bear genitive case marked by \textit{-(n)In}. In UD, we do not use the \texttt{nsubj} relation to indicate subjects of Exceptional Case Marking (ECM) structures, those subjects are indicated by obj and depended on the upper clause predicate. In \autoref{ex:nsubj2}, the bracketed part is a nominalized embedded sentence. In these sentences, the predicate and the subject agree; we recognize the subject by genitive marker and the nominalized predicate by possessive marker.
+Subjects in possessive embedded clauses bear genitive case marked by \textit{-(n)In}. In UD, we do not use the \texttt{nsubj} relation to indicate subjects of Exceptional Case Marking (ECM) structures, those subjects are indicated by obj and depend on the upper clause predicate. In \autoref{ex:nsubj2}, the bracketed part is a nominalized embedded sentence. In these sentences, the predicate and the subject agree; we recognize the subject by genitive marker \textit{-(n)In} and the nominalized predicate by the possessive marker \textit{-(s)I(n)}.
 
 \begin{exe}
 \ex \label{ex:nsubj2}
 \begin{dependency}
 \begin{deptext}[column sep=0.3cm]
-Fatma-nın \& üç \& kat \& merdiven \& çık-ma-sı \& çok \& zor \\ Fatma-\Gen{} \& three \& floor \& stairs \& ascend-\Nmlz{}-\Tsg{} \& very \& difficult[\Cop.\Tsg]\\
+Fatma-nın \& üç \& kat \& merdiven \& çık-ma-sı \& çok \& zor \\ 
+F-\Gen{} \& three \& floor \& stairs \& ascend-\Nmlz{}-\Poss{}.\Tsg{}[\Nom] \& very \& difficult[\Cop.\Tsg]\\
 \end{deptext}
 \deproot{7}{root}
 \depedge{7}{6}{amod}
@@ -47,13 +48,13 @@ Fatma-nın \& üç \& kat \& merdiven \& çık-ma-sı \& çok \& zor \\ Fatma-\G
 \glt `It’s very difficult [for Fatma to go up three flights of stairs].'
 \end{exe}
 
-\textbf{\texttt{obj}}: \texttt{obj} marks overt nominal direct objects. Direct objects bear accusative case in Turkish. Accusative case is realized two ways depending on definiteness: \textit{–(y)I} marks definite accusative arguments and null suffix marks indefinite accusative arguments. In \autoref{ex:obj}, the phrase [\textit{Saçımı}] is the direct internal argument of \textit{kestir-} `get sth cut'.
+\textbf{\texttt{obj}}: \texttt{obj} marks the overt nominal direct objects. Direct objects bear accusative case in Turkish. Accusative case is realized two ways depending on definiteness: \textit{–(y)I} marks definite accusative arguments and null suffix marks indefinite accusative arguments. In \autoref{ex:obj}, the phrase [\textit{Saçımı}] is the direct internal argument of \textit{kestir-} `get sth cut'.
 
 \begin{exe}
 \ex \label{ex:obj}
 \begin{dependency}
 \begin{deptext}
-Saç-ım-ı \& kes-tir-di-m \\ hair-\Poss{}-\Acc{} \& cut-\Caus{}-\Pst{}-\Fsg{} \\
+Saç-ım-ı \& kes-tir-di-m \\ hair-\Poss{}.\Fsg{}-\Acc{} \& cut-\Caus{}-\Pst{}-\Fsg{} \\
 \end{deptext}
 \deproot{2}{root}
 \depedge{2}{1}{obj}
@@ -77,70 +78,56 @@ Bir \& mektup \& yaz-dı-m \& \\ a \& letter \& write-\Pst{}-{\Fsg} \\
 \end{exe}
 
 \textbf{\texttt{iobj}}:
-\texttt{iobj} marks overt nominal indirect objects of ditransitive predicates. In Turkish they typically marked by dative case which is marked by the suffix –(y)A. In UD \texttt{iobj} is only allowed when there is an overt direct object.
+\texttt{iobj} marks the overt nominal indirect objects predicates. In Turkish, they are marked by dative case \textit{–(y)A}. In UD, \texttt{iobj} is used when there is an overt direct object. In \autoref{iobj}, the phrase [\textit{temiz tabakları}] `clean plates' is the direct object and is \texttt{obj} to \textit{koydu} `put', whereas the the phrase [\textit{masaya}] `table-{\Dat}' is the indirect object and \texttt{iobj} to \textit{koydu} `put'.
 
 \begin{exe}
 \ex \label{iobj}
 \begin{dependency}
 \begin{deptext}[column sep=0.3cm]
-Garson \& temiz \& tabakları \& masaya \& koydu \&. \\
+Garson \& temiz \& tabak-lar-ı \& masa-ya \& koy-du \\
+waiter[{\Nom}] \& clean \& plate-\Pl{}-\Acc{} \& table-\Dat{} \& put-\Pst{}[\Tsg] \\
 \end{deptext}
 \deproot{5}{root}
 \depedge{5}{4}{iobj}
 \depedge{5}{3}{obj}
 \depedge{5}{1}{nsubj}
-\depedge{5}{6}{punct}
 \depedge{3}{2}{amod}
 \end{dependency}
-\gll Garson temiz tabak-lar-ı masa-ya koy-du. \\
-waiter clean plate-\Pl{}-\Acc{} table-\Dat{} put-\Pst{}. \\
-\glt The waiter put the clean plates down on the table.
+\glt `The waiter put the clean plates down on the table.'
 \end{exe}
 
-In this example the NP [temiz tabakları] is the direct object and is \texttt{obj}$>$koydu, whereas the NP [masaya] is the indirect NP and \texttt{iobj}$>$koydu. 
 
 \textbf{\texttt{csubj}}:
-Clausal subject arguments are generally marked \textit{-mA, -mAK, -DIK, -(y)AcAK} nominalizers. They are nominative in matrix clauses and some embedded clauses, genitive in possessive embedded clauses.
+Clausal subjects are marked with nominalizers  \textit{-mA, -mAK, -DIK,} and \textit{-(y)AcAK}. Subjects are marked nominative in matrix clauses, some embedded clauses, and genitive in possessive embedded clauses. In \autoref{ex:csubj}, the phrase [\textit{Fatma-nın merdiven çıkması}] has as its head [\textit{çıkması}], which is a nominalized \textit{çık} `to ascend' with \textit{-mA} and marked by \textit{-(s)I(n)}.
 
 \begin{exe}
-\ex \label{csubj}
+\ex \label{ex:csubj}
 \begin{dependency}
 \begin{deptext}[column sep=0.3cm]
-Fatma \& Hanımın \& üç \& kat \& merdiven \& çıkması \& çok \& zor \&. \\
+Fatma-nın \& merdiven \& çık-ma-sı \& çok \& zor \\
+F-\Gen{} \& stairs \& ascend-\Nmlz{}-\Poss{}.\Tsg{}[\Nom] \& very \& difficult[\Cop.\Prs.\Tsg] \\
 \end{deptext}
-\deproot{8}{root}
-\depedge{8}{7}{amod}
-\depedge{8}{6}{csubj}
-\depedge{6}{5}{obj}
+\depedge{3}{1}{nsubj}
+\depedge{3}{2}{obj}
+\deproot{5}{root}
 \depedge{5}{4}{amod}
-\depedge{4}{3}{nummod}
-\depedge{2}{1}{flat}
-\depedge{6}{1}{nsubj}
+\depedge{5}{3}{csubj}
 \end{dependency}
+\glt `It is very difficult [for Fatma to go up the stairs].'
 
-\gll [Fatma Hanım-ın üç kat merdiven çık-ma-sı] çok zor. \\
-Fatma Lady-\Gen{} three floor stairs ascend-\Nmlz{}-\Tsg{} very difficult \\
-\glt It’s very difficult [for Fatma Hanım to go up three flights of stairs].
-\end{exe}
-In this example, the CP [Fatma Hanım-ın üç kat merdiven çıkması] has the head [çıkması] as VP, which is nominalized via \textit{-mA} and genitive-possessive construction. 
-
-\begin{exe}
-\ex \label{csubj}
+\ex \label{ex:csubj2}
 \begin{dependency}
 \begin{deptext}[column sep=0.24cm]
-Orhan'ın \& bir \& şey \& yapmadığı \& belliydi \&. \\
+Orhan-ın \& bir \& şey \& yap-ma-dığ-ı \& belli-ydi \\
+O-\Gen{} \& a \& thing \& do-\Neg{}-\Nmlz{}-\Poss{}.\Tsg{}[\Nom] \& apperant-{\Cop.\Pst}[\Tsg] \\
 \end{deptext}
 \deproot{5}{root}
 \depedge{5}{4}{csubj}
 \depedge{4}{3}{obj}
 \depedge{3}{2}{det}
 \depedge{4}{1}{nsubj}
-\depedge{5}{6}{punct}
 \end{dependency}
-
-\gll [Orhan-ın bir şey yap-ma-dığ-ı] belliydi. \\
-Orhan-\Gen{} a thing do-\Neg{}-\Nmlz{}-\Tsg{} very difficult \\
-\glt It was obvious [that Orhan wasn’t doing/hadn’t done anything].
+\glt `It was obvious [that Orhan wasn’t doing/hadn’t done anything].'
 \end{exe}
 
 \textbf{\texttt{ccomp}}:
@@ -150,18 +137,15 @@ Clausal complements are any infinite or finite clauses that are direct objects d
 \ex \label{csubj}
 \begin{dependency}
 \begin{deptext}[column sep=0.24cm]
-Doktora \& hastaya \& bakmasını \& söyledi \&. \\
+Doktor-a \& hasta-ya \& bak-ma-sın-ı \& söyle-di \\
+doctor-\Dat{} \& sick-\Dat{} \& look-\Nmlz{}-\Poss{}.\Tsg{}-\Acc{} \& tell-\Pst{}[\Tsg] \\
 \end{deptext}
 \deproot{4}{root}
-\depedge{4}{5}{punct}
 \depedge{4}{3}{ccomp}
 \depedge{3}{2}{obj}
 \depedge{4}{1}{nsubj}
 \end{dependency}
-
-\gll Doktor-a [hasta-ya bak-ma-sın]-ı söyle-di. \\
-doctor-\Dat{} sick-\Dat{} look-\Nmlz{}-\Tsg{}-\Acc{} tell-\Pst{} \\
-\glt S/he told the doctor [to check the patient].
+\glt `S/he told the doctor [to check the patient].'
 \end{exe} 
 
 In this example, the VP [\textbf{bakmasını}] is the head of the CP [\textit{hastaya bakmasını}] and is \texttt{ccomp}$>$söyledi because it is the clausal complement of the predicate. Notice that this CP has a covert \textit{PRO\textsubscript{i}} that is coindexed with another element that occurred before: \textit{Doktora\textsubscript{i}}. We understand existence of this invisible subject of the embedded CP via the 3\textsuperscript{rd} person agreement marker on the predicate [\textit{bakma-\textbf{sın}-ı}].
@@ -175,7 +159,8 @@ In this example, the VP [\textbf{bakmasını}] is the head of the CP [\textit{ha
 \ex \label{xcomp}
 \begin{dependency}
 \begin{deptext}
-Sen \& nereye \& gitmek \& istiyorsun \&? \\
+Sen \& nere-ye \& git-mek \& ist-iyor-sun \&? \\
+{\Ssg}[\Nom] \& where-\Dat{} \& go-\Inf{} \& want-\Prog{}-\Ssg{} \\
 \end{deptext}
 \deproot{4}{root}
 \depedge{4}{5}{punct}
@@ -183,58 +168,47 @@ Sen \& nereye \& gitmek \& istiyorsun \&? \\
 \depedge{3}{2}{obl}
 \depedge{4}{1}{nsubj}
 \end{dependency}
-
-\gll Sen nere-ye git-mek ist-iyor-sun. \\
-you where-\Dat{} go-\Inf{} want-\Prog{}-\Ssg{} \\
-\glt Where do you want to go?.
+\glt `Where do you want to go?'
 \end{exe} 
 
 In this example, the embedded CP [\textit{nereye gitmek}] lacks any subject and case marking. It is also the complement of the matrix predicate \textit{istiyorsun}. Therefore, the head of the embedded CP \textit{gitmek} should be \texttt{xcomp}$>$istiyorsun.
 
 \textbf{\texttt{obl}}:
-\texttt{obl} is used to mark non-core elements in a sentence that can indicate time, place, manner etc. They can be marked by a grammatical case (many time obliques are not marked with any case), or dependency \texttt{case}. 
+\texttt{obl} is used to mark non-core arguments in a sentence that can indicate time, place, manner, and alike. They can be marked by a grammatical case (many time obliques are not marked with any case), or dependency \texttt{case}. 
 
 \begin{exe}
-\ex \label{xcomp}
+\ex \label{xcomp2}
 \begin{dependency}
 \begin{deptext}[column sep=0.31cm]
-Kışın \& başlayan \& yağmurlar \& ilkbaharda \& da \& sürdü \&. \\
+Kışın \& başla-yan \& yağmur-lar \& ilkbahar-da \& da \& sür-dü \\
+in.winter \& start-\Ptcp{} \& rain-\Pl{} \& spring-\Loc{} \& too \& last-\Pst{} \\
 \end{deptext}
 \deproot{6}{root}
-\depedge{6}{7}{punct}
 \depedge{6}{4}{obl}
 \depedge{4}{5}{advmod:emph}
 \depedge{6}{3}{nsubj}
 \depedge{2}{1}{obl}
 \depedge{3}{2}{acl}
 \end{dependency}
-
-\gll Kışın başla-yan yağmur-lar ilkbahar-da da sür-dü. \\
-in.winter start-\Ptcp{} rain-\Pl{} spring-\Loc{} too last-\Pst{} \\
-\glt The rain that began in the winter continued in the spring, too.
+\glt `The rain that began in the winter continued in the spring, too.'
 \end{exe} 
-In this example, oblique objects \textit{kışın} and \textit{ilkbaharda} indicate the time, former of which is a dependent to the embedded predicate, the latter to matrix. Generally, any nominal that indicates time of the verb will be marked with \texttt{obl}.
-
+In this example, oblique objects \textit{kışın} `in.winter' and \textit{ilkbaharda} `in autumn' indicate the time, former of which is a dependent to the embedded predicate, the latter to matrix. Generally, any nominal that indicates time of the verb will be marked with \texttt{obl}. In \autoref{ex:obl}, \textit{evden} `from the house' is a typical example of non-core argument (adjunct). The predicate \textit{çık-} `to get out' is an unergative verb that cannot have an internal argument. Besides accusative, all cases could potentially be a sign of an adjunct in Turkish.
 
 \begin{exe}
-\ex \label{obl}
+\ex \label{ex:obl}
 \begin{dependency}
 \begin{deptext}[column sep=0.3cm]
-Şu \& anda \& evden \& çıktı \&. \\
+Şu \& an-da \& ev-den \& çık-tı \\
+that \& moment-\Loc{} \& house-\Abl{} \& get.out-\Pst{}[\Tsg]\\
 \end{deptext}
 \deproot{4}{root}
-\depedge{4}{5}{punct}
 \depedge{4}{3}{obl}
 \depedge{4}{2}{obl}
 \depedge{2}{1}{det}
 \end{dependency}
-
-\gll Şu an-da ev-den çık-tı. \\
-that moment-\Loc{} house-\Abl{} get.out-\Pst{} \\
-\glt S/he has just left the house.
+\glt `(S/he) has just left the house.'
 \end{exe} 
 
-In this example, \textit{evden} is a typical example of non-core argument (adjunct). The predicate \textit{çık-} is an unergative verb that cannot have an internal argument. Besides accusative, all cases could potentially be a sign of an adjunct in Turkish.
 
 \textbf{\texttt{vocative}}:
 Indicates vocative elements in a sentence. They directly depend on the predicate of that clause.
@@ -243,61 +217,53 @@ Indicates vocative elements in a sentence. They directly depend on the predicate
 N/A
 
 \textbf{\texttt{dislocated}}:
-\texttt{dislocated} is utilized in Turkish when a sentence contains an element that are exemplified usually after a colon.
+\texttt{dislocated} is utilized in Turkish when a sentence contains an element that is exemplified usually after a colon.
 
 \textbf{\texttt{advcl}}:
-\texttt{advcl} is the only non-core clausal element. It basically marks the predicate of an embedded clause. They are identified by some items like \textit{olarak} or \textit{için} marked by case or such suffixes: \textit{-(y)ArAK, -DIkçA, -mAdAn, -DIğIndAn, -ken, -IncA, mAktAnsA} etc.
+\texttt{advcl} is the only non-core clausal element. It basically marks the predicate of an embedded clause. They are identified by some items like \textit{olarak} or \textit{için} marked by case or such suffixes: \textit{-(y)ArAK, -DIkçA, -mAdAn, -DIğIndAn, -ken, -IncA, mAktAnsA}, and alike. \texttt{advcl:cond} is used to tie heads of conditional adverbial clauses to the upper clause.
 
-\texttt{advcl:cond} is used to tie heads of conditional adverbial clauses to the upper clause.
+In \autoref{ex:advcl} and \autoref{ex:advcl2}, the adverbial phrase in brackets is a deverbal. Note that many adverbial clauses naturally lack subject. These adverbial clauses have a covert subject (PRO\textsubscript{i}) that is co-indexed with the subject of the relevant clause. In \autoref{ex:advcl2}, we see a compound adverbial clause. Duplication is a fairly common operation in Turkish for both denominal and deverbal adverbials.
 
 \begin{exe}
-\ex \label{advcl}
+\ex \label{ex:advcl}
 \begin{dependency}
 \begin{deptext}[column sep=0.3cm]
-Çocuklar \& koşarak \& içeri \& girdiler \&. \\
+Çocuklar \& koş-arak \& içeri \& gir-di-ler \\
+child-\Pl{}[\Nom] \& run-\Adv{} \& inside \& enter-\Pst{}-\Tpl{}\\
 \end{deptext}
 \deproot{4}{root}
-\depedge{4}{5}{punct}
 \depedge{4}{3}{obl}
 \depedge{4}{2}{advcl}
 \depedge{4}{1}{nsubj}
 \end{dependency}
-\gll Çocuk-lar [koş-arak] içeri gir-di-ler. \\
-child-\Pl{} run-\Adv{} inside enter-\Pst{}-\Tpl{} \\
-\glt The children came in [running].
-\end{exe}
+\glt `The children came in [running].'
 
-In this example, the adverbial phrase in brackets is a deverbal adverb. Note that many adverbial clauses naturally lack subject. (11) and (12) are examples of this sort. These adverbial clauses have a PRO\textsubscript{i} that is coindexed with the subject of the relevant clause. However, some adverbial clauses like (13) may have a subject, when examples like (13) lack overt subject their subject is assumed to be identical with the subject of the upper clause.
-
-\begin{exe}
-\ex \label{advcl}
+\ex \label{ex:advcl2}
 \begin{dependency}
 \begin{deptext}[column sep=0.3cm]
-Genç \& kadın \& ağlaya \& ağlaya \& hikayesini \& anlattı \&. \\
+Genç \& kadın \& ağlaya \& ağlaya \& hikayesini \& anlattı \\
+young \& woman[\Nom] \& cry-\Adv{} \& cry-\Adv{} \& story-\Tsg{}-\Acc{} \& tell-\Pst{} \\
 \end{deptext}
 \deproot{6}{root}
-\depedge{6}{7}{punct}
 \depedge{6}{5}{obj}
 \depedge{3}{4}{compound:redup}
 \depedge{6}{3}{advcl}
 \depedge{6}{2}{nsubj}
 \depedge{2}{1}{amod}
 \end{dependency}
-\gll Genç kadın [ağla-ya ağla-ya] hikaye-sin-i anlat-tı.  \\
-young woman cry-\Adv{} cry-\Adv{} story-\Tsg{}-\Acc{} tell-\Pst{} \\
 \glt The young woman told her story [weeping (continually)].
 \end{exe}
 
-In this example we see a compound adverbial clause. Duplication is a fairly common operation in Turkish for both denominal and deverbal adverbials.
+In \autoref{ex:advcl3} the embedded sentence is an adverbial clause with an overt subject [\textit{Bu para}] `this money', so its predicate \textit{yetmeyeceği} `will not be enough' is inflected for {\Tsg} which is different than the matrix subject which is {\Fsg}.
 
 \begin{exe}
-\ex \label{advcl}
+\ex \label{ex:advcl3}
 \begin{dependency}
 \begin{deptext}[column sep=0.32cm]
-Bu \& para \& yetmeyeceği \& için \& Gürkan'dan \& borç \& isteyeceğim \&. \\
+Bu \& para \& yetmeyeceği \& için \& Gürkan'dan \& borç \& isteyeceğim \\
+this \& money \& suffice-\Neg{}-\Ptcp{}-\Tsg \& for \& Gürkan-\Abl{} \& debt \& want-\Fut{}-\Fsg{} \\
 \end{deptext}
 \deproot{7}{root}
-\depedge{7}{8}{punct}
 \depedge{7}{6}{obj}
 \depedge{7}{5}{obl}
 \depedge{7}{3}{advcl}
@@ -306,15 +272,13 @@ Bu \& para \& yetmeyeceği \& için \& Gürkan'dan \& borç \& isteyeceğim \&. 
 \depedge{3}{2}{obj}
 \depedge{2}{1}{det}
 \end{dependency}
-\gll [Bu para yet-me-yeceğ-i için] Gürkan-dan borç iste-yeceğ-im  \\
-this money suffice-\Neg{}-\Ptcp{}-\Tsg for Gürkan-\Abl{} debt want-\Fut{}-\Fsg{} \\
-\glt [As this money won’t be enough] I’m going to ask Gürkan a loan.
+\glt `As this money won’t be enough, I’m going to ask Gürkan a loan.'
 \end{exe}
 
-In this example the embedded sentence is an adverbial clause with a subject NP [Bu para], so its predicate \textit{yetmeyeceği} is inflected to 3\textsuperscript{rd} person which is different than the matrix subject which is an overt 1\textsuperscript{st} person.
+In \autoref{ex:advcl4},  \textit{satsa} `' is the head of the conditional phrase. These are regarded as a sort of adverbial clause in UD. In Turkish, they are marked by \textit{-sA} suffix.
 
 \begin{exe}
-\ex \label{advcl}
+\ex \label{ex:advcl4}
 \begin{dependency}
 \begin{deptext}[column sep=0.32cm]
 Arabayı \& satsa \& hepimiz \& rahatlarız \&. \\
@@ -330,7 +294,7 @@ car-\Acc{} sell-\Cond{} all-\Fpl{} relax-\Prs{}-\Fpl{} \\
 \glt [As this money won’t be enough] I’m going to ask Gürkan a loan.
 \end{exe}
 
-In this example,  \textit{satsa} is the head of the conditional phrase. These are regarded as a sort of adverbial clause in UD. In Turkish, they are marked by \textit{-sA} suffix.
+
 
 \textbf{\texttt{advmod}}:
 \texttt{advmod} is used to mark adverbs that modify an adjective, a verb or another adverb in terms of manner, degree, or frequency. It is also used to mark sentence level adverbials like \textit{özellikle, ayrıca, bilhassa, buna ilaveten} etc.
@@ -358,7 +322,7 @@ Mustafa-\Gen{} like.that talk-\Neg{}-\Tsg{} nice be-\Neg{}-\Pst{} \\
 In this example \textit{öyle} ‘like that’ is the adverbial modifier of the embedded predicate.
 
 \begin{exe}
-\ex \label{advmod}
+\ex \label{advmod2}
 \begin{dependency}
 \begin{deptext}[column sep=0.22cm]
 Öğretmen \& gibi \& konuşuyorsun \&. \\
@@ -376,7 +340,7 @@ teacher like talk-\Prog{}-\Ssg{} \\
 The postpositive particle \textit{gibi} ‘like, as’ is understood to be head of the postpositional phrase [\textsubscript{PP} Öğretmen gibi]; in UD we understand it as merely a dependent (marked by \texttt{case}) of a nominal which it makes into a adverbial modifier.
 
 \begin{exe}
-\ex \label{advmod}
+\ex \label{advmod3}
 \begin{dependency}
 \begin{deptext}[column sep=0.32cm]
 Suyu \& yavaşça \& sürahiden \& masadaki \& bardağa \& döktü \&. \\
@@ -397,7 +361,7 @@ water-\Acc{} slow-\Adv{} jug-\Abl{} table-\Loc{}-\Adj{} glass-\Dat{} pour-\Pst{}
 \textit{-cA} is a typical adverbializer in Turkish, which is mostly added to the adjectives.
 
 \begin{exe}
-\ex \label{advmod:emph}
+\ex \label{advmod:emph2}
 \begin{dependency}
 \begin{deptext}[column sep=0.24cm]
 Oya \& işe \& gitti \& Ali \& de\&. \\
@@ -436,17 +400,19 @@ ambulance quick come-\Pst{} thankfully  \\
 \glt Thank god, ambulance came quickly.
 \end{exe}
 
-In this example, \textit{çok şükür} is a compound that expresses thankful wishes. In (\ref{discourse})\footnote{\printglossaries} \citep{goksel2004turkish} provides some list of these discursive elements like this:
+In this example, \textit{çok şükür} is a compound that expresses thankful wishes. In (\ref{discourse2}), \citep{goksel2005} provides some list of these discursive elements like this:
 
 \begin{exe}
-\ex \label{discourse}
-\textit{inşallah} 'God willing, hopefully'
-\textit{umarım} 'I hope'
-\textit{Allahtan/bereket versin} 'fortunately'
-\textit{çok şükür} 'thank goodness, fortunately'
-\textit{iyi ki} 'it's good idea that...' 'thank goodness'
-\textit{maalesef/ne yazık ki} 'unfortunately'
-\textit{tabii (ki)/doğal olarak} 'of course, naturally'
+\ex \label{discourse2}Some discourse elements 
+\begin{xlist}
+\ex \textit{inşallah} 'God willing, hopefully'
+\ex \textit{umarım} 'I hope'
+\ex \textit{Allahtan/bereket versin} 'fortunately'
+\ex \textit{çok şükür} 'thank goodness, fortunately'
+\ex \textit{iyi ki} 'it's good idea that...' 'thank goodness'
+\ex \textit{maalesef/ne yazık ki} 'unfortunately'
+\ex \textit{tabii (ki)/doğal olarak} 'of course, naturally'
+\end{xlist}
 \end{exe}
 
 \textbf{\texttt{aux}}:
@@ -470,7 +436,7 @@ Nermin school-\Dat{} Q go-\Pst{} \\
 \end{exe}
 
 \begin{exe}
-\ex \label{aux:q}
+\ex \label{aux:q2}
 \begin{dependency}
 \begin{deptext}[column sep=0.32cm]
 Nermin \& okula \& gitmiş \& mi \&? \\
@@ -486,7 +452,7 @@ Nermin school-\Dat{} go-\Pst{} Q \\
 \glt Has Nermin gone to school?
 \end{exe}
 
-In example (22), question particle \textit{mI} focuses over the adjunct [\textsubscript{NP}okula] therefore it is dependent on it whereas in (23) it focuses on the predicate. 
+In example (\ref{aux:q}), question particle \textit{mI} focuses over the adjunct [\textsubscript{NP}okula] therefore it is dependent on it whereas in (\ref{aux:q2}) it focuses on the predicate. 
 
 \textbf{\texttt{cop}}:
 \texttt{cop} is used to mark copular elements that are either attached or cliticized to the predicate. \textit{-DIr, -(y)DI, -(y)mIş, -(y)sA, -(y)ken} are considered as Turkish copulas and are always marked \texttt{cop}. 
@@ -551,7 +517,7 @@ Hasan \& pencereyi \& baltayla \& kırdı \&. \\
 \depedge{4}{1}{nsubj}
 \end{dependency}
 \gll Hasan pencere-yi balta-yla kır-dı.  \\
-Hasan window-\Acc axe-\Ins{} break-\Pst{} \\
+Hasan window-\Acc{} axe-\Ins{} break-\Pst{} \\
 \glt Hasan broke the window with (an) axe.
 \end{exe}
 
@@ -574,10 +540,10 @@ I-\Gen{} a book-\Fsg{} there.is \\
 \glt I have a book.
 \end{exe}
 
-Turkish lacks the verb \textit{have to} indicate possession. So, it uses possessive existential sentences like (26) to indicate possession. That is, in order to say \textit{x has y}, it says \textit{x’s y exists}. In these structures, we ought to use \texttt{nmod:poss} to indicate that y belongs to x.
+Turkish lacks the verb \textit{have to} indicate possession. So, it uses possessive existential sentences like (\ref{nmod:poss}) to indicate possession. That is, in order to say \textit{x has y}, it says \textit{x’s y exists}. In these structures, we ought to use \texttt{nmod:poss} to indicate that y belongs to x.
 
 \begin{exe}
-\ex \label{nmod:poss}
+\ex \label{nmod:poss2}
 \begin{dependency}
 \begin{deptext}[column sep=0.25cm]
 Bu \& çocuğun \& annesi \& nerede \&? \\
@@ -701,7 +667,7 @@ small a daughter \\
 In this example, we see a typical use of an indefinite determiner who is often found between an adjective and the head noun.
 
 \begin{exe}
-\ex \label{det}
+\ex \label{det2}
 \begin{dependency}
 \begin{deptext}
 şu \& raftaki \& bütün \& eski \& kitaplar \\
@@ -721,7 +687,7 @@ that shelf-\Loc{}-\Adj{} all old book-\Pl{} \\
 \texttt{clf} is a relation that marks classifiers in Turkish. They are rather rare and generally occur between a numeral and a noun head. \textit{demet, baş, çay kaşığı, tutam, tane, fincan, kap, teneke} are some examples of classifiers in Turkish.
 
 \begin{exe}
-\ex \label{det}
+\ex \label{clf}
 \begin{dependency}
 \begin{deptext}
 üç \& demet \& havuç \\
